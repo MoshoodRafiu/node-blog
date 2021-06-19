@@ -7,5 +7,13 @@ const User = sequelize.define('user', {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
+    },
+    title: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    image: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });

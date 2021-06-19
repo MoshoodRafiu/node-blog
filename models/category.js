@@ -15,5 +15,9 @@ const User = sequelize.define('user', {
     slug: {
         type: Sequelize.STRING,
         allowNull: false
-    }
+    },
+    description: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
 });
