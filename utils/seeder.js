@@ -2,7 +2,7 @@ const faker = require('faker');
 const Category = require('../models/category');
 const User = require('../models/user');
 
-const seedUsers = async (val) => {
+const seedUsers = (val) => {
     let users = [];
     for(let i = 0; i < val; i++){
         users.push({
@@ -14,7 +14,19 @@ const seedUsers = async (val) => {
     User.bulkCreate(users);
 }
 
-const seedCategories = async (val) => {
+const seedCategories = (val) => {
+    let categories = [];
+    for(let i = 0; i < val; i++){
+        categories.push({
+            name: faker.random.word(),
+            slug: faker.lorem.slug(),
+            description: faker.lorem.paragraph()
+        });
+    }
+    Category.bulkCreate(categories);
+}
+
+const seedBanner = (val) => {
     let categories = [];
     for(let i = 0; i < val; i++){
         categories.push({
