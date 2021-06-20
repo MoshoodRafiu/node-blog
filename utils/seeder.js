@@ -37,7 +37,7 @@ const seedPosts = async (val) => {
         posts.push({
             title: faker.random.words(),
             body: faker.lorem.text(),
-            coverImage: faker.image.business(),
+            coverImage: faker.image.image(),
             userId: user.id,
             categoryId: category.id
         });
@@ -47,9 +47,12 @@ const seedPosts = async (val) => {
 
 exports.run = async function(force = false){
     const users = await User.findAll();
-    if (users.length === 0 || force){
+    const categories = await Category.findAll();
+    const posts = await Post.findAll();
+    if (users.length === 0 || force)
         await seedUsers(10);
+    if (categories.length === 0 || force)
         await seedCategories(10);
+    if (posts.length === 0 || force)
         await seedPosts(100);
-    }
 }

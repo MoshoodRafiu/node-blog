@@ -17,10 +17,11 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(routes);
 
-association.syncDBWithAssociations(false)
+const force = false;
+association.syncDBWithAssociations(force)
     .then(result => {
         console.log(result)
-        seeder.run();
+        seeder.run(force);
         app.listen(3000);
     })
     .catch(err => console.log(err));
