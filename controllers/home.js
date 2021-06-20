@@ -6,7 +6,10 @@ module.exports = {
         const categories = await Category.findAll();
         const resultsPerPage = 9;
         const totalItem = await Post.count();
-        const currentPage = req.query.page ? +req.query.page : 1;
+        const totalPages = Math.ceil(totalItem / resultsPerPage);
+        let currentPage = req.query.page ? +req.query.page : 1;
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
         const posts = await Post.findAll({
             offset: resultsPerPage * (currentPage - 1),
             limit: resultsPerPage,
@@ -23,7 +26,7 @@ module.exports = {
                 posts,
                 pagination: {
                     totalItem,
-                    totalPages: Math.ceil(totalItem / resultsPerPage),
+                    totalPages,
                     resultsPerPage,
                     currentPage
                 }
