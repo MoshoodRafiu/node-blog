@@ -2,11 +2,19 @@
     <div class="col-full">
       <nav class="pgn" data-aos="fade-up">
         <ul>
-          <li><a class="pgn__prev" href="#0">Prev</a></li>
+          <% if (pagination.currentPage > 1) { %>
+              <li><a class="pgn__prev" href="?page=<%= pagination.currentPage - 1; %>">Prev</a></li>
+          <% } else { %>
+            <li><a class="pgn__prev" onclick="event.preventDefault()" href="">Prev</a></li>
+          <% } %>
           <% for (let i = 1; i <= pagination.totalPages; i++) { %>
             <li><a class="pgn__num <%= i === pagination.currentPage ? 'current' : '' %> " href="?page=<%= i %>"><%= i %></a></li>
           <% }; %>
-          <li><a class="pgn__next" href="#0">Next</a></li>
+          <% if (pagination.currentPage < pagination.totalPages) { %>
+            <li><a class="pgn__next" href="?page=<%= pagination.currentPage + 1; %>">Next</a></li>
+          <% } else { %>
+            <li><a class="pgn__next" onclick="event.preventDefault()" href="">Next</a></li>
+          <% } %>
         </ul>
       </nav>
     </div>
