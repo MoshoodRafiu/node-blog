@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/devKunle/node-blog#readme",
   "devDependencies": {
+    "faker": "^5.5.3",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
