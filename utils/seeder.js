@@ -4,7 +4,7 @@ const Post = require('../models/post');
 const User = require('../models/user');
 const sequelize = require('./database');
 
-const seedUsers = (val) => {
+const seedUsers = async (val) => {
     let users = [];
     for(let i = 0; i < val; i++){
         users.push({
@@ -13,10 +13,10 @@ const seedUsers = (val) => {
             password: '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
         });
     }
-    User.bulkCreate(users);
+    await User.bulkCreate(users);
 }
 
-const seedCategories = (val) => {
+const seedCategories = async (val) => {
     let categories = [];
     for(let i = 0; i < val; i++){
         categories.push({
@@ -25,7 +25,7 @@ const seedCategories = (val) => {
             description: faker.lorem.paragraph()
         });
     }
-    Category.bulkCreate(categories);
+    await Category.bulkCreate(categories);
 }
 
 const seedPosts = async (val) => {
@@ -42,11 +42,14 @@ const seedPosts = async (val) => {
             categoryId: category.id
         });
     }
-    Post.bulkCreate(posts);
+    await Post.bulkCreate(posts);
 }
 
-exports.run = async function(){
-    await seedUsers(10);
-    await seedCategories(10);
-    await seedPosts(100);
+exports.run = async function(force = false){
+    const users = await User.findAll();
+    if (users.length === 0 || force){
+        await seedUsers(10);
+        await seedCategories(10);
+        await seedPosts(100);
+    }
 }

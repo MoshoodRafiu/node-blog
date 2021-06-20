@@ -1,0 +1,37 @@
+<article class="col-block">
+    <div class="item-entry" data-aos="zoom-in">
+      <div class="item-entry__thumb">
+        <a href="#" class="item-entry__thumb-link">
+          <img
+            data-cfsrc="<%= post.coverImage %>"
+            srcset="
+            <%= post.coverImage %> 1x,
+            <%= post.coverImage %> 2x
+            "
+            alt=
+          /><noscript
+            ><img
+              data-cfsrc="<%= post.coverImage %>"
+              srcset="
+              <%= post.coverImage %> 1x,
+              <%= post.coverImage %> 2x
+              "
+              alt=""
+          /></noscript>
+        </a>
+      </div>
+      <div class="item-entry__text">
+        <div class="item-entry__cat">
+          <a href="/category/<%= post.category.slug %>"><%= post.category.name %></a>
+        </div>
+        <h1 class="item-entry__title">
+          <a href="single-standard.html"
+            ><%= post.title %> </a
+          >
+        </h1>
+        <div class="item-entry__date">
+          <a href="single-standard.html"><%= date.format(post.createdAt, 'ddd, MMM DD YYYY') %> </a>
+        </div>
+      </div>
+    </div>
+  </article>
