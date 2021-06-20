@@ -35,6 +35,7 @@ const seedPosts = async (val) => {
         user = await User.findOne({ order: sequelize.random() });
         category = await Category.findOne({ order: sequelize.random() });
         posts.push({
+            slug: faker.lorem.slug(),
             title: faker.random.words(),
             body: faker.lorem.text(),
             coverImage: faker.image.image(),

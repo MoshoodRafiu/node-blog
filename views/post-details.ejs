@@ -1,0 +1,385 @@
+<%- include('./includes/header') %>
+
+<section class="s-content s-content--top-padding s-content--narrow">
+    <article class="row entry format-standard">
+      <div class="entry__media col-full">
+        <div class="entry__post-thumb">
+          <script type="text/javascript" style="display: none">
+            //<![CDATA[
+            window.__mirage2 = {
+              petok:
+                "823f951f206eec19581a78660ed2b744b4925cb4-1624087410-1800",
+            };
+            //]]>
+          </script>
+          <script
+            type="text/javascript"
+            src="../../../ajax.cloudflare.com/cdn-cgi/scripts/04b3eb47/cloudflare-static/mirage2.min.js"
+          ></script>
+          <img
+            data-cfsrc="/images/thumbs/single/standard/standard-1000.jpg"
+            srcset="
+              /images/thumbs/single/standard/standard-2000.jpg 2000w,
+              /images/thumbs/single/standard/standard-1000.jpg 1000w,
+              /images/thumbs/single/standard/standard-500.jpg   500w
+            "
+            sizes="(max-width: 2000px) 100vw, 2000px"
+            alt=""
+            style="display: none; visibility: hidden"
+          /><noscript
+            ><img
+              src="/images/thumbs/single/standard/standard-1000.jpg"
+              srcset="
+                /images/thumbs/single/standard/standard-2000.jpg 2000w,
+                /images/thumbs/single/standard/standard-1000.jpg 1000w,
+                /images/thumbs/single/standard/standard-500.jpg   500w
+              "
+              sizes="(max-width: 2000px) 100vw, 2000px"
+              alt=""
+          /></noscript>
+        </div>
+      </div>
+      <div class="entry__header col-full">
+        <h1 class="entry__header-title display-1">
+          <%= data.post.title  %>
+        </h1>
+        <ul class="entry__header-meta">
+          <li class="date"><%= date.format(data.post.createdAt, 'MMMM DD, YYYY') %></li>
+          <li class="byline">
+            By
+            <a href="#0">Jonathan Doe</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-full entry__main">
+        <p class="lead drop-cap">
+            <%= data.post.body %>
+        </p>
+        <div class="entry__taxonomies">
+          <div class="entry__cat">
+            <h5>Posted In:</h5>
+            <span class="entry__tax-list">
+              <a href="#0"><%= data.post.category.name %> </a>
+            </span>
+          </div>
+          <div class="entry__tags">
+            <h5>Tags:</h5>
+            <span class="entry__tax-list entry__tax-list--pill">
+              <a href="#0">orci</a>
+              <a href="#0">lectus</a>
+              <a href="#0">varius</a>
+              <a href="#0">turpis</a>
+            </span>
+          </div>
+        </div>
+        <div class="entry__author">
+          <img
+            data-cfsrc="images/avatars/xuser-03.jpg.pagespeed.ic.RNecCvHfJi.jpg"
+            alt=""
+            style="display: none; visibility: hidden"
+          /><noscript
+            ><img
+              src="images/avatars/xuser-03.jpg.pagespeed.ic.RNecCvHfJi.jpg"
+              alt=""
+          /></noscript>
+          <div class="entry__author-about">
+            <h5 class="entry__author-name">
+              <span>Posted by</span>
+              <a href="#0">Jonathan Doe</a>
+            </h5>
+            <div class="entry__author-desc">
+              <p>
+                Alias aperiam at debitis deserunt dignissimos dolorem
+                doloribus, fuga fugiat impedit laudantium magni maxime nihil
+                nisi quidem quisquam sed ullam voluptas voluptatum. Lorem
+                ipsum dolor sit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div class="s-content__entry-nav">
+      <div class="row s-content__nav">
+        <div class="col-six s-content__prev">
+          <a href="<%= data.posts.prev ? '/post/'+data.posts.prev.slug : '' %>" rel="prev">
+            <span>Previous Post</span>
+            <%= data.posts.prev ? data.posts.prev.title : '' %>
+          </a>
+        </div>
+        <div class="col-six s-content__next">
+          <a href="<%= data.posts.next ? '/post/'+data.posts.next.slug : '' %>" rel="next">
+            <span>Next Post</span>
+            <%= data.posts.next ? data.posts.next.title : '' %>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="comments-wrap">
+      <div id="comments" class="row">
+        <div class="col-full">
+          <h3 class="h2">5 Comments</h3>
+
+          <ol class="commentlist">
+            <li class="depth-1 comment">
+              <div class="comment__avatar">
+                <img
+                  class="avatar"
+                  data-cfsrc="images/avatars/50x50xuser-01.jpg.pagespeed.ic._5i1yx1bFl.jpg"
+                  alt=""
+                  width="50"
+                  height="50"
+                  style="display: none; visibility: hidden"
+                /><noscript
+                  ><img
+                    class="avatar"
+                    src="images/avatars/50x50xuser-01.jpg.pagespeed.ic._5i1yx1bFl.jpg"
+                    alt=""
+                    width="50"
+                    height="50"
+                /></noscript>
+              </div>
+              <div class="comment__content">
+                <div class="comment__info">
+                  <div class="comment__author">Itachi Uchiha</div>
+                  <div class="comment__meta">
+                    <div class="comment__time">Jun 15, 2018</div>
+                    <div class="comment__reply">
+                      <a class="comment-reply-link" href="#0">Reply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__text">
+                  <p>
+                    Adhuc quaerendum est ne, vis ut harum tantas noluisse, id
+                    suas iisque mei. Nec te inani ponderum vulputate, facilisi
+                    expetenda has et. Iudico dictas scriptorem an vim, ei alia
+                    mentitum est, ne has voluptua praesent.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="thread-alt depth-1 comment">
+              <div class="comment__avatar">
+                <img
+                  class="avatar"
+                  data-cfsrc="images/avatars/50x50xuser-04.jpg.pagespeed.ic.SDf6xBEsLX.jpg"
+                  alt=""
+                  width="50"
+                  height="50"
+                  style="display: none; visibility: hidden"
+                /><noscript
+                  ><img
+                    class="avatar"
+                    src="images/avatars/50x50xuser-04.jpg.pagespeed.ic.SDf6xBEsLX.jpg"
+                    alt=""
+                    width="50"
+                    height="50"
+                /></noscript>
+              </div>
+              <div class="comment__content">
+                <div class="comment__info">
+                  <div class="comment__author">John Doe</div>
+                  <div class="comment__meta">
+                    <div class="comment__time">Jun 15, 2018</div>
+                    <div class="comment__reply">
+                      <a class="comment-reply-link" href="#0">Reply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__text">
+                  <p>
+                    Sumo euismod dissentiunt ne sit, ad eos iudico qualisque
+                    adversarium, tota falli et mei. Esse euismod urbanitas ut
+                    sed, et duo scaevola pericula splendide. Primis veritus
+                    contentiones nec ad, nec et tantas semper delicatissimi.
+                  </p>
+                </div>
+              </div>
+              <ul class="children">
+                <li class="depth-2 comment">
+                  <div class="comment__avatar">
+                    <img
+                      class="avatar"
+                      data-cfsrc="images/avatars/50x50xuser-03.jpg.pagespeed.ic.ejyXbU-pos.jpg"
+                      alt=""
+                      width="50"
+                      height="50"
+                      style="display: none; visibility: hidden"
+                    /><noscript
+                      ><img
+                        class="avatar"
+                        src="images/avatars/50x50xuser-03.jpg.pagespeed.ic.ejyXbU-pos.jpg"
+                        alt=""
+                        width="50"
+                        height="50"
+                    /></noscript>
+                  </div>
+                  <div class="comment__content">
+                    <div class="comment__info">
+                      <div class="comment__author">Kakashi Hatake</div>
+                      <div class="comment__meta">
+                        <div class="comment__time">Jun 15, 2018</div>
+                        <div class="comment__reply">
+                          <a class="comment-reply-link" href="#0">Reply</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment__text">
+                      <p>
+                        Duis sed odio sit amet nibh vulputate cursus a sit
+                        amet mauris. Morbi accumsan ipsum velit. Duis sed odio
+                        sit amet nibh vulputate cursus a sit amet mauris
+                      </p>
+                    </div>
+                  </div>
+                  <ul class="children">
+                    <li class="depth-3 comment">
+                      <div class="comment__avatar">
+                        <img
+                          class="avatar"
+                          data-cfsrc="images/avatars/50x50xuser-04.jpg.pagespeed.ic.SDf6xBEsLX.jpg"
+                          alt=""
+                          width="50"
+                          height="50"
+                          style="display: none; visibility: hidden"
+                        /><noscript
+                          ><img
+                            class="avatar"
+                            src="images/avatars/50x50xuser-04.jpg.pagespeed.ic.SDf6xBEsLX.jpg"
+                            alt=""
+                            width="50"
+                            height="50"
+                        /></noscript>
+                      </div>
+                      <div class="comment__content">
+                        <div class="comment__info">
+                          <div class="comment__author">John Doe</div>
+                          <div class="comment__meta">
+                            <div class="comment__time">Jun 15, 2018</div>
+                            <div class="comment__reply">
+                              <a class="comment-reply-link" href="#0"
+                                >Reply</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="comment__text">
+                          <p>
+                            Investigationes demonstraverunt lectores legere me
+                            lius quod ii legunt saepius. Claritas est etiam
+                            processus dynamicus, qui sequitur mutationem
+                            consuetudium lectorum.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="depth-1 comment">
+              <div class="comment__avatar">
+                <img
+                  class="avatar"
+                  data-cfsrc="images/avatars/50x50xuser-02.jpg.pagespeed.ic.2E9dK8Xl9c.jpg"
+                  alt=""
+                  width="50"
+                  height="50"
+                  style="display: none; visibility: hidden"
+                /><noscript
+                  ><img
+                    class="avatar"
+                    src="images/avatars/50x50xuser-02.jpg.pagespeed.ic.2E9dK8Xl9c.jpg"
+                    alt=""
+                    width="50"
+                    height="50"
+                /></noscript>
+              </div>
+              <div class="comment__content">
+                <div class="comment__info">
+                  <div class="comment__author">Shikamaru Nara</div>
+                  <div class="comment__meta">
+                    <div class="comment__time">Jun 15, 2018</div>
+                    <div class="comment__reply">
+                      <a class="comment-reply-link" href="#0">Reply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__text">
+                  <p>
+                    Typi non habent claritatem insitam; est usus legentis in
+                    iis qui facit eorum claritatem.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="row comment-respond">
+        <div id="respond" class="col-full">
+          <h3 class="h2">
+            Add Comment <span>Your email address will not be published</span>
+          </h3>
+          <form
+            name="contactForm"
+            id="contactForm"
+            method="post"
+            action="#"
+            autocomplete="off"
+          >
+            <fieldset>
+              <div class="form-field">
+                <input
+                  name="cName"
+                  id="cName"
+                  class="full-width"
+                  placeholder="Your Name*"
+                  value=""
+                  type="text"
+                />
+              </div>
+              <div class="form-field">
+                <input
+                  name="cEmail"
+                  id="cEmail"
+                  class="full-width"
+                  placeholder="Your Email*"
+                  value=""
+                  type="text"
+                />
+              </div>
+              <div class="form-field">
+                <input
+                  name="cWebsite"
+                  id="cWebsite"
+                  class="full-width"
+                  placeholder="Website"
+                  value=""
+                  type="text"
+                />
+              </div>
+              <div class="message form-field">
+                <textarea
+                  name="cMessage"
+                  id="cMessage"
+                  class="full-width"
+                  placeholder="Your Message*"
+                ></textarea>
+              </div>
+              <input
+                name="submit"
+                id="submit"
+                class="btn btn--primary btn-wide btn--large full-width"
+                value="Add Comment"
+                type="submit"
+              />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include('./includes/footer') %>

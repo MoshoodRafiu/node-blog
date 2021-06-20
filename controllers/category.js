@@ -40,7 +40,7 @@ module.exports = {
                 }
             });
         }else{
-            res.redirect('/')
+            res.redirect('/404');
         }
     }
 }

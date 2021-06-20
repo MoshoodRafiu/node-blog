@@ -13,6 +13,10 @@ Post.init({
         autoIncrement: true,
         primaryKey: true
     },
+    slug: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
     title: {
         type: Sequelize.TEXT,
         allowNull: false
@@ -43,6 +47,20 @@ Post.getPorpular = () => {
         ],
         limit: 6
     });
+}
+
+Post.next = (id) => {
+    return Post.findOne({
+        where: { id: id+1 }
+    });
+}
+
+Post.prev = (id) => {
+    if (id > 1) {
+        return Post.findOne({
+            where: { id: id-1 }
+        });
+    }
 }
 
 module.exports = Post;

@@ -25,12 +25,12 @@
           <a href="/category/<%= post.category.slug %>"><%= post.category.name %></a>
         </div>
         <h1 class="item-entry__title">
-          <a href="single-standard.html"
+          <a href="/post/<%= post.slug %>"
             ><%= post.title %> </a
           >
         </h1>
         <div class="item-entry__date">
-          <a href="single-standard.html"><%= date.format(post.createdAt, 'ddd, MMM DD YYYY') %> </a>
+          <a href="/post/<%= post.slug %>"><%= date.format(post.createdAt, 'ddd, MMM DD YYYY') %> </a>
         </div>
       </div>
     </div>
