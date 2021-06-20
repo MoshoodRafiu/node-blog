@@ -8,6 +8,7 @@ const helpers = require('./utils/helpers');
 const date = require('date-and-time');
 const Post = require('./models/post');
 const Category = require('./models/category');
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.locals.helpers = helpers;
@@ -45,6 +46,6 @@ association.syncDBWithAssociations(force)
     .then(result => {
         console.log(result)
         seeder.run(force);
-        app.listen(3000);
+        app.listen(PORT);
     })
     .catch(err => console.log(err));
