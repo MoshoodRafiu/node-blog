@@ -4,13 +4,29 @@ const Post = require("../models/post");
 module.exports = {
     index: async (req, res) => {
         const categories = await Category.findAll();
-        const posts = await Post.findAll({ include: ['category'] });
+        const resultsPerPage = 9;
+        const totalItem = Post.count();
+        const currentPage = req.query.page ?? 1;
+        const posts = await Post.findAll({
+            offset: resultsPerPage * (currentPage - 1),
+            limit: resultsPerPage,
+            include: ['category'],
+            order: [
+                ['createdAt', 'DESC']
+            ]
+        });
         res.render('index', {
             title: 'Home',
             name: 'home',
             data: {
                 categories,
-                posts
+                posts,
+                pagination: {
+                    totalItem,
+                    totalPages: Math.ceil(totalItem / resultsPerPage),
+                    resultsPerPage,
+                    currentPage
+                }
             }
         });
     },

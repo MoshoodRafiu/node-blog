@@ -46,13 +46,13 @@ const seedPosts = async (val) => {
 }
 
 exports.run = async function(force = false){
-    const users = await User.findAll();
-    const categories = await Category.findAll();
-    const posts = await Post.findAll();
-    if (users.length === 0 || force)
+    const users = await User.count();
+    const categories = await Category.count();
+    const posts = await Post.count();
+    if (users === 0 || force)
         await seedUsers(10);
-    if (categories.length === 0 || force)
+    if (categories === 0 || force)
         await seedCategories(10);
-    if (posts.length === 0 || force)
+    if (posts === 0 || force)
         await seedPosts(100);
 }
