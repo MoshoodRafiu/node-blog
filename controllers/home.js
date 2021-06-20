@@ -23,7 +23,10 @@ module.exports = {
             name: 'home',
             data: {
                 categories,
-                posts,
+                posts: {
+                    all: posts,
+                    porpular: await Post.getPorpular()
+                },
                 pagination: {
                     totalItem,
                     totalPages,
@@ -39,7 +42,10 @@ module.exports = {
             title: 'About Us',
             name: 'about',
             data: {
-                categories
+                categories,
+                posts: {
+                    porpular: await Post.getPorpular()
+                },
             }
         });
     },
@@ -49,7 +55,10 @@ module.exports = {
             title: 'Contact Us',
             name: 'contact',
             data: {
-                categories
+                categories,
+                posts: {
+                    porpular: await Post.getPorpular()
+                },
             }
         });
     }

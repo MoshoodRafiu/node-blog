@@ -3,132 +3,30 @@
       <div class="col-seven md-six tab-full popular">
         <h3>Popular Posts</h3>
         <div class="block-1-2 block-m-full popular__posts">
-          <article class="col-block popular__post">
-            <a href="#0" class="popular__thumb">
-              <img
-                src="/images/thumbs/small/xtulips-150.jpg.pagespeed.ic.lUwsKn_02V.jpg"
-                alt
-              /><noscript
-                ><img
-                  src="/images/thumbs/small/xtulips-150.jpg.pagespeed.ic.lUwsKn_02V.jpg"
-                  alt=""
-              /></noscript>
-            </a>
-            <h5>10 Interesting Facts About Caffeine.</h5>
-            <section class="popular__meta">
-              <span class="popular__author"
-                ><span>By</span> <a href="#0">John Doe</a></span
-              >
-              <span class="popular__date"
-                ><span>on</span>
-                <time datetime="2018-06-14">Jun 14, 2018</time></span
-              >
-            </section>
-          </article>
-          <article class="col-block popular__post">
-            <a href="#0" class="popular__thumb">
-              <img
-                src="/images/thumbs/small/xwheel-150.jpg.pagespeed.ic.R2z2HDIIXW.jpg"
-                alt
-              /><noscript
-                ><img
-                  src="/images/thumbs/small/xwheel-150.jpg.pagespeed.ic.R2z2HDIIXW.jpg"
-                  alt=""
-              /></noscript>
-            </a>
-            <h5>
-              <a href="#0">Visiting Theme Parks Improves Your Health.</a>
-            </h5>
-            <section class="popular__meta">
-              <span class="popular__author"
-                ><span>By</span> <a href="#0">John Doe</a></span
-              >
-              <span class="popular__date"
-                ><span>on</span>
-                <time datetime="2018-06-12">Jun 12, 2018</time></span
-              >
-            </section>
-          </article>
-          <article class="col-block popular__post">
-            <a href="#0" class="popular__thumb">
-              <img
-                src="/images/thumbs/small/shutterbug-150.jpg"
-                alt
-              /><noscript
-                ><img src="/images/thumbs/small/shutterbug-150.jpg" alt=""
-              /></noscript>
-            </a>
-            <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
-            <section class="popular__meta">
-              <span class="popular__author"
-                ><span>By</span> <a href="#0">John Doe</a></span
-              >
-              <span class="popular__date"
-                ><span>on</span>
-                <time datetime="2018-06-12">Jun 12, 2018</time></span
-              >
-            </section>
-          </article>
-          <article class="col-block popular__post">
-            <a href="#0" class="popular__thumb">
-              <img
-                src="/images/thumbs/small/cookies-150.jpg"
-                alt
-              /><noscript
-                ><img src="/images/thumbs/small/cookies-150.jpg" alt=""
-              /></noscript>
-            </a>
-            <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
-            <section class="popular__meta">
-              <span class="popular__author"
-                ><span>By</span> <a href="#0"> John Doe</a></span
-              >
-              <span class="popular__date"
-                ><span>on</span>
-                <time datetime="2018-06-12">Jun 12, 2018</time></span
-              >
-            </section>
-          </article>
-          <article class="col-block popular__post">
-            <a href="#0" class="popular__thumb">
-              <img
-                src="/images/thumbs/small/beetle-150.jpg"
-                alt
-              /><noscript
-                ><img src="/images/thumbs/small/beetle-150.jpg" alt=""
-              /></noscript>
-            </a>
-            <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
-            <section class="popular__meta">
-              <span class="popular__author"
-                ><span>By</span> <a href="#0">John Doe</a></span
-              >
-              <span class="popular__date"
-                ><span>on</span>
-                <time datetime="2018-06-12">Jun 12, 2018</time></span
-              >
-            </section>
-          </article>
-          <article class="col-block popular__post">
-            <a href="#0" class="popular__thumb">
-              <img
-                src="/images/thumbs/small/salad-150.jpg"
-                alt
-              /><noscript
-                ><img src="/images/thumbs/small/salad-150.jpg" alt=""
-              /></noscript>
-            </a>
-            <h5>Healthy Mediterranean Salad Recipes</h5>
-            <section class="popular__meta">
-              <span class="popular__author"
-                ><span>By</span> <a href="#0"> John Doe</a></span
-              >
-              <span class="popular__date"
-                ><span>on</span>
-                <time datetime="2018-06-12">Jun 12, 2018</time></span
-              >
-            </section>
-          </article>
+          <% data.posts.porpular.forEach(post => { %>
+            <article class="col-block popular__post">
+              <a href="#0" class="popular__thumb">
+                <img
+                  src="<%= post.coverImage %>"
+                  alt
+                /><noscript
+                  ><img
+                    src="<%= post.coverImage %>"
+                    alt=""
+                /></noscript>
+              </a>
+              <h5><%= post.title %></h5>
+              <section class="popular__meta">
+                <span class="popular__author"
+                  ><span>By</span> <a href="#0">John Doe</a></span
+                >
+                <span class="popular__date"
+                  ><span>on</span>
+                  <time datetime="2018-06-14"><%= date.format(post.createdAt, 'MMM DD YYYY') %></time></span
+                >
+              </section>
+            </article>
+          <% }); %>
         </div>
       </div>
       <div class="col-four md-six tab-full end">

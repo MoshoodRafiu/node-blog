@@ -134,8 +134,8 @@
     <section class="s-content">
       <div class="row entries-wrap wide">
         <div class="entries">
-          <% if (data.posts.length > 0) { %>
-            <% data.posts.forEach(post => { %>
+          <% if (data.posts.all.length > 0) { %>
+            <% data.posts.all.forEach(post => { %>
               <%- include('./includes/post.ejs', {post}) %>
             <% }); %>
           <% }else { %>
@@ -143,7 +143,7 @@
           <% } %>
         </div>
       </div>
-      <% if (data.posts.length > 0) { %>
+      <% if (data.posts.all.length > 0) { %>
         <%- include('./includes/pagination.ejs', {pagination: data.pagination}) %>
       <% } %>
     </section>

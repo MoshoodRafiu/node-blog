@@ -1,7 +1,12 @@
+const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
 const sequelize = require('../utils/database');
 
-const Category = sequelize.define('category', {
+class Category extends Model{
+
+}
+
+Category.init({
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -19,7 +24,10 @@ const Category = sequelize.define('category', {
     description: {
         type: Sequelize.TEXT,
         allowNull: false
-    },
+    }
+}, {
+    sequelize,
+    modelName: 'category'
 });
 
 module.exports = Category;

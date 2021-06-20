@@ -1,7 +1,12 @@
+const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
 const sequelize = require('../utils/database');
 
-const Post = sequelize.define('post', {
+class Post extends Model {
+
+}
+
+Post.init({
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -19,7 +24,25 @@ const Post = sequelize.define('post', {
     coverImage: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    views: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0
     }
+}, {
+    sequelize,
+    modelName: 'post'
 });
+
+Post.getPorpular = () => {
+    return Post.findAll({
+        order: [
+            ['views', 'DESC'],
+            ['createdAt', 'DESC']
+        ],
+        limit: 6
+    });
+}
 
 module.exports = Post;

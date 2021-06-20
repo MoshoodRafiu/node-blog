@@ -38,6 +38,7 @@ const seedPosts = async (val) => {
             title: faker.random.words(),
             body: faker.lorem.text(),
             coverImage: faker.image.image(),
+            views: Math.random() * 10,
             userId: user.id,
             categoryId: category.id
         });

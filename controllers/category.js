@@ -1,4 +1,5 @@
 const Category = require("../models/category");
+const Post = require("../models/post");
 const helpers = require("../utils/helpers");
 
 module.exports = {
@@ -26,7 +27,10 @@ module.exports = {
                 data: {
                     category,
                     categories,
-                    posts,
+                    posts: {
+                        all: posts,
+                        porpular: await Post.getPorpular()
+                    },
                     pagination: {
                         totalItem,
                         totalPages,

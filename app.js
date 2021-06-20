@@ -6,6 +6,7 @@ const association = require('./utils/association');
 const seeder = require('./utils/seeder');
 const helpers = require('./utils/helpers');
 const date = require('date-and-time');
+const Post = require('./models/post');
 
 const app = express();
 app.locals.helpers = helpers;
