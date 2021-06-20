@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/devKunle/node-blog#readme",
   "devDependencies": {
-    "faker": "^5.5.3",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
@@ -27,6 +26,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "faker": "^5.5.3"
   }
 }
