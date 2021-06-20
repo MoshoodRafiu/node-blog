@@ -1,0 +1,13 @@
+<div class="row pagination-wrap">
+    <div class="col-full">
+      <nav class="pgn" data-aos="fade-up">
+        <ul>
+          <li><a class="pgn__prev" href="#0">Prev</a></li>
+          <% for (let i = 1; i <= pagination.totalPages; i++) { %>
+            <li><a class="pgn__num <%= i === pagination.currentPage ? 'current' : '' %> " href="?page=<%= i %>"><%= i %></a></li>
+          <% }; %>
+          <li><a class="pgn__next" href="#0">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>

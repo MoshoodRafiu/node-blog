@@ -5,8 +5,8 @@ module.exports = {
     index: async (req, res) => {
         const categories = await Category.findAll();
         const resultsPerPage = 9;
-        const totalItem = Post.count();
-        const currentPage = req.query.page ?? 1;
+        const totalItem = await Post.count();
+        const currentPage = +req.query.page ?? 1;
         const posts = await Post.findAll({
             offset: resultsPerPage * (currentPage - 1),
             limit: resultsPerPage,
