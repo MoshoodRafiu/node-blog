@@ -1,6 +1,8 @@
 const faker = require('faker');
 const Category = require('../models/category');
+const Post = require('../models/post');
 const User = require('../models/user');
+const sequelize = require('./database');
 
 const seedUsers = (val) => {
     let users = [];
@@ -26,19 +28,25 @@ const seedCategories = (val) => {
     Category.bulkCreate(categories);
 }
 
-const seedBanner = (val) => {
-    let categories = [];
+const seedPosts = async (val) => {
+    let posts = [];
+    let user, category;
     for(let i = 0; i < val; i++){
-        categories.push({
-            name: faker.random.word(),
-            slug: faker.lorem.slug(),
-            description: faker.lorem.paragraph()
+        user = await User.findOne({ order: sequelize.random() });
+        category = await Category.findOne({ order: sequelize.random() });
+        posts.push({
+            title: faker.random.words(),
+            body: faker.lorem.text(),
+            coverImage: faker.image.business(),
+            userId: user.id,
+            categoryId: category.id
         });
     }
-    Category.bulkCreate(categories);
+    Post.bulkCreate(posts);
 }
 
 exports.run = async function(){
     await seedUsers(10);
     await seedCategories(10);
+    await seedPosts(100);
 }
